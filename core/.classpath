@@ -17,5 +17,6 @@
 	<classpathentry kind="lib" path="C:/eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.swt.examples.controls.source_3.1.100.v3735b.jar"/>
 	<classpathentry kind="lib" path="C:/eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.swt.examples.browser.source_3.1.100.v3735b.jar"/>
 	<classpathentry kind="lib" path="C:/eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.swt.examples.browser.demos.source_3.1.200.v3735b.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.swt"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
