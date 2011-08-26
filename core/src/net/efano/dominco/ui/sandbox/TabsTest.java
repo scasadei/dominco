@@ -1,4 +1,4 @@
-package net.efano.dominco.ui;
+package net.efano.dominco.ui.sandbox;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.custom.CTabItem;

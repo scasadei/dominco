@@ -1,4 +1,4 @@
-package net.efano.dominco.ui;
+package net.efano.dominco.ui.sandbox;
 
 import org.eclipse.swt.*;
 import org.eclipse.swt.custom.*;
