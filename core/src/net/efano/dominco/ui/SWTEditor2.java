@@ -9,6 +9,7 @@ import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.layout.FillLayout;
 
 import org.eclipse.swt.widgets.*;
+import org.eclipse.swt.custom.ScrolledComposite;
 
 public class SWTEditor2 implements IEditor {
 
@@ -21,9 +22,12 @@ public class SWTEditor2 implements IEditor {
 			for (int i = 0; i < 4; i++) {
 				CTabItem item = new CTabItem(folder, SWT.CLOSE);
 				item.setText("Item "+i);
-				Text text = new Text(folder, SWT.MULTI);
-				text.setText("Content for Item "+i);
-				item.setControl(text);
+				final ScrolledComposite compositeOnItem = new ScrolledComposite(folder, SWT.NONE);
+				item.setControl(compositeOnItem);
+			    
+				// Text text = new Text(folder, SWT.MULTI);
+				// text.setText("Content for Item "+i);
+				// item.setControl(text);
 			}
 			
 			final CTabItem specialItem = new CTabItem(folder, SWT.CLOSE);

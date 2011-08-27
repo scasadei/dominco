@@ -5,7 +5,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="C:/eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.swt_3.7.0.v3735b.jar"/>
-	<classpathentry kind="lib" path="C:/eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.swt.win32.win32.x86_64_3.7.0.v3735b.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.swt.win32.win32.x86_64_3.7.0.v3735b.jar" sourcepath="C:/eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.swt.win32.win32.x86_64.source_3.7.0.v3735b.jar"/>
 	<classpathentry kind="lib" path="C:/eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.swt.win32.win32.x86_64.source_3.7.0.v3735b.jar"/>
 	<classpathentry kind="lib" path="C:/eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.sdk.examples_3.2.0.v20110503"/>
 	<classpathentry kind="lib" path="C:/eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.swt.examples_3.7.0.v3735b"/>
