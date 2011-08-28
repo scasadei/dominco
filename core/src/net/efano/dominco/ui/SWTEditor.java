@@ -6,35 +6,39 @@ import org.eclipse.swt.widgets.*;
 
 public class SWTEditor implements IEditor {
 
-	   public static void main (String [] args) {
-		      Display display = new Display ();
-		      Shell shell = new Shell (display);
+	private Shell rootWidget;
 
-		      
-		  	final TabFolder tabFolder = new TabFolder (shell, SWT.BORDER);
-			Rectangle clientArea = shell.getClientArea ();
-			tabFolder.setLocation (clientArea.x, clientArea.y);
-			for (int i=0; i<6; i++) {
-				TabItem item = new TabItem (tabFolder, SWT.NONE);
-				item.setText ("TabItem " + i);
-				Button button = new Button (tabFolder, SWT.PUSH);
-				button.setText ("Page " + i);
-				item.setControl (button);
-			}
-			tabFolder.pack ();
-			shell.pack ();
-			shell.open ();		      
-		      
-			
-		      while (!shell.isDisposed ()) {
-		         if (!display.readAndDispatch ()) display.sleep ();
-		      }
-		      display.dispose ();
+	   public static void main (String [] args) {
+	   
+		   new SWTEditor();
 		   }
 
 
 	
 	public SWTEditor() {
+	      Display display = new Display ();
+	       rootWidget = new Shell (display);
+
+	      
+	  	final TabFolder tabFolder = new TabFolder (rootWidget, SWT.BORDER);
+		Rectangle clientArea = rootWidget.getClientArea ();
+		tabFolder.setLocation (clientArea.x, clientArea.y);
+		for (int i=0; i<6; i++) {
+			TabItem item = new TabItem (tabFolder, SWT.NONE);
+			item.setText ("TabItem " + i);
+			Button button = new Button (tabFolder, SWT.PUSH);
+			button.setText ("Page " + i);
+			item.setControl (button);
+		}
+		tabFolder.pack ();
+		rootWidget.pack ();
+		rootWidget.open ();		      
+	      
+		
+	      while (!rootWidget.isDisposed ()) {
+	         if (!display.readAndDispatch ()) display.sleep ();
+	      }
+	      display.dispose ();
 		
 	}
 	
