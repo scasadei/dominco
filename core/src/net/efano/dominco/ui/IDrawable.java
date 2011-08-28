@@ -4,9 +4,9 @@ import net.efano.dominco.strings.*;
 
 public interface IDrawable {
 
-	void setStrings();
+	void setStrings(Strings aStrings);
 	Strings getStrings();
-	void draw();
-	void updateStrings();
+	void drawStrings();
+	void readStrings();
 	
 }

@@ -36,6 +36,6 @@ public class Strings {
 	}
 	
 	public void draw() {
-		drawable.draw();
+		drawable.drawStrings();
 	}
 }
