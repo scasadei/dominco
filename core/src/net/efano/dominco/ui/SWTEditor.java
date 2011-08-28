@@ -2,6 +2,8 @@ package net.efano.dominco.ui;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.*;
 
 public class SWTEditor implements IEditor {
@@ -23,13 +25,18 @@ public class SWTEditor implements IEditor {
 	  	final TabFolder tabFolder = new TabFolder (rootWidget, SWT.BORDER);
 		Rectangle clientArea = rootWidget.getClientArea ();
 		tabFolder.setLocation (clientArea.x, clientArea.y);
+		
+		TabItem item = new TabItem (tabFolder, SWT.NONE);
+		item.setText ("Classes");
+		Composite panel = new Composite(tabFolder,SWT.NONE);
+		panel.setLayout(new GridLayout());
 		for (int i=0; i<6; i++) {
-			TabItem item = new TabItem (tabFolder, SWT.NONE);
-			item.setText ("TabItem " + i);
-			Button button = new Button (tabFolder, SWT.PUSH);
-			button.setText ("Page " + i);
-			item.setControl (button);
+		Button button = new Button (panel, SWT.PUSH);
+		button.setText ("Strings");
 		}
+		item.setControl (panel);
+		
+		
 		tabFolder.pack ();
 		rootWidget.pack ();
 		rootWidget.open ();		      
