@@ -18,8 +18,8 @@ import org.eclipse.swt.widgets.TableItem;
 public class SWTEditor implements IEditor {
 
 	protected Shell shell;
-	private Table table;
-	private Table table_1;
+	// private Table table;
+	// private Table table_1;
 	private CTabFolder tabFolder;
 
 	/**
@@ -56,75 +56,32 @@ public class SWTEditor implements IEditor {
 	protected void createContents() {
 		shell = new Shell();
 		shell.setSize(450, 300);
-		shell.setText("SWT Application");
+		shell.setText("Strings Viewer");
 		
 		tabFolder = new CTabFolder(shell, SWT.BORDER);
 		tabFolder.setBounds(23, 32, 156, 125);
 		tabFolder.setSelectionBackground(Display.getCurrent().getSystemColor(SWT.COLOR_TITLE_INACTIVE_BACKGROUND_GRADIENT));
+
+		Table table = addView("Nomi","nomi");
+		drawString(table,"Pinco Pallino Mezzolo");
+		drawString(table,"Gurdo");
+		drawString(table,"Miolo");
 		
-		CTabItem tbtmNomi = new CTabItem(tabFolder, SWT.NONE);
-		tbtmNomi.setText("Nomi");
 		
-		ScrolledComposite scrolledComposite = new ScrolledComposite(tabFolder, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
-		tbtmNomi.setControl(scrolledComposite);
-		
-		scrolledComposite.setExpandHorizontal(true);
-		scrolledComposite.setExpandVertical(true);
-		
-		table = new Table(scrolledComposite, SWT.BORDER | SWT.FULL_SELECTION);
-		table.setHeaderVisible(true);
-		table.setLinesVisible(true);
-		
-		TableColumn tblclmnNomi = new TableColumn(table, SWT.NONE);
-		tblclmnNomi.setWidth(100);
-		tblclmnNomi.setText("nomi");
-		
-		TableItem tableItem = new TableItem(table, SWT.NONE);
-		tableItem.setText("Pinco Pallino");
-		
-		TableItem tableItem_1 = new TableItem(table, SWT.NONE);
-		tableItem_1.setText("Carlotto Spanzani");
-		
-		TableItem tableItem_2 = new TableItem(table, SWT.NONE);
-		tableItem_2.setText("Giulio Cesarotti");
-		scrolledComposite.setContent(table);
-		scrolledComposite.setMinSize(table.computeSize(SWT.DEFAULT, SWT.DEFAULT));
-		
-		CTabItem tbtmCitta = new CTabItem(tabFolder, SWT.NONE);
-		tbtmCitta.setText("Citta");
-		
-		ScrolledComposite scrolledComposite_2 = new ScrolledComposite(tabFolder, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
-		tbtmCitta.setControl(scrolledComposite_2);
-		scrolledComposite_2.setExpandHorizontal(true);
-		scrolledComposite_2.setExpandVertical(true);
-		
-		table_1 = new Table(scrolledComposite_2, SWT.BORDER | SWT.FULL_SELECTION);
-		table_1.setHeaderVisible(true);
-		table_1.setLinesVisible(true);
-		
-		TableColumn tblclmnCitta = new TableColumn(table_1, SWT.NONE);
-		tblclmnCitta.setWidth(100);
-		tblclmnCitta.setText("citta");
-		
-		TableItem tableItem_3 = new TableItem(table_1, SWT.NONE);
-		tableItem_3.setText("Rapigi");
-		
-		TableItem tableItem_4 = new TableItem(table_1, SWT.NONE);
-		tableItem_4.setText("Secena");
-		
-		TableItem tableItem_5 = new TableItem(table_1, SWT.NONE);
-		tableItem_5.setText("Rifenze");
-		
-		TableItem tableItem_6 = new TableItem(table_1, SWT.NONE);
-		tableItem_6.setText("Lobogna");
-		scrolledComposite_2.setContent(table_1);
-		scrolledComposite_2.setMinSize(table_1.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+
+		Table table_1 = addView("Citta","citta");
+		drawString(table_1,"Rapigi");
+		drawString(table_1,"Rapigi");
+		drawString(table_1,"Rapigi");
+		drawString(table_1,"Rapigi");
+		drawString(table_1,"Rapigi");
+		drawString(table_1,"Megolo");
 
 	}
 
 	@Override
 	public IDrawable getNewDrawable() {
-		return new StringsView(addColumnView("StringsView","Strings'"));
+		return new StringsView(addView("StringsView","Strings'"));
 	}
 
 	private TableItem drawString(Table aTable,String aString) {
@@ -133,7 +90,7 @@ public class SWTEditor implements IEditor {
 		return aTableItem;
 	}
 	
-	private TableColumn addColumnView(String tableName, String columnName) {
+	private Table addView(String tableName, String columnName) {
 		CTabItem tbtmNomi = new CTabItem(tabFolder, SWT.NONE);
 		tbtmNomi.setText(tableName);
 
@@ -143,13 +100,18 @@ public class SWTEditor implements IEditor {
 		scrolledComposite.setExpandHorizontal(true);
 		scrolledComposite.setExpandVertical(true);
 
-		table = new Table(scrolledComposite, SWT.BORDER | SWT.FULL_SELECTION);
+		Table table = new Table(scrolledComposite, SWT.BORDER | SWT.FULL_SELECTION);
 		table.setHeaderVisible(true);
 		table.setLinesVisible(true);
 
 		TableColumn tblclmnNomi = new TableColumn(table, SWT.NONE);
 		tblclmnNomi.setWidth(100);
 		tblclmnNomi.setText(columnName);
-		return tblclmnNomi;
+		
+		scrolledComposite.setContent(table);
+		scrolledComposite.setMinSize(table.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+
+		
+		return table;
 	}	
 }

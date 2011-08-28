@@ -1,6 +1,6 @@
 package net.efano.dominco.ui.wb;
 
-import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.Table;
 
 import net.efano.dominco.strings.Strings;
 import net.efano.dominco.ui.IDrawable;
@@ -8,11 +8,11 @@ import net.efano.dominco.ui.IDrawable;
 public class StringsView implements IDrawable {
 
 	Strings strings;
-	TableColumn tableColumn;
+	Table table;
 
 	
-	public StringsView(TableColumn aTableColumn) {
-		tableColumn = aTableColumn;
+	public StringsView(Table aTable) {
+		table = aTable;
 	}
 	
 	@Override
