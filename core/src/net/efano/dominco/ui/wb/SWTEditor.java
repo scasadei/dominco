@@ -20,7 +20,12 @@ public class SWTEditor implements DrawableFactory {
 	// private Table table;
 	// private Table table_1;
 	private CTabFolder tabFolder;
-
+	private Display display;
+	
+	public Display getDisplay() {
+		return display;
+	}
+	
 	/**
 	 * Launch the application.
 	 * @param args
@@ -34,11 +39,8 @@ public class SWTEditor implements DrawableFactory {
 		}
 	}
 
-	/**
-	 * Open the window.
-	 */
 	public void open() {
-		Display display = Display.getDefault();
+		display = Display.getDefault();
 		init();
 		addContents();
 		shell.open();
@@ -51,7 +53,26 @@ public class SWTEditor implements DrawableFactory {
 	}
 
 	
-	protected void init() {
+	public synchronized void  startInOwnThread() {
+		Runnable ru = new Runnable() {
+			@Override
+			public void run() {
+				Display display = Display.getDefault();
+				init();
+				addContents();
+				shell.open();
+				shell.layout();
+				while (!shell.isDisposed()) {
+					if (!display.readAndDispatch()) {
+						display.sleep();
+					}
+				}
+			}
+		};
+		new Thread(ru).start();
+	}
+
+	public void init() {
 		shell = new Shell();
 		shell.setSize(450, 300);
 		shell.setText("Strings Viewer");
