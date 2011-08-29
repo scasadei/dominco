@@ -11,7 +11,7 @@ import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.custom.ScrolledComposite;
 
-public class SWTEditor2 implements IEditor {
+public class SWTEditor2 implements DrawableFactory {
 
 	   public static void main (String [] args) {
 		      Display display = new Display ();

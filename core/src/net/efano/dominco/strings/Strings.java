@@ -3,7 +3,7 @@ package net.efano.dominco.strings;
 import java.util.Vector;
 
 import net.efano.dominco.ui.IDrawable;
-import net.efano.dominco.ui.IEditor;
+import net.efano.dominco.ui.DrawableFactory;
 
 public class Strings {
 
@@ -15,7 +15,7 @@ public class Strings {
 		extent = new Vector<String>();
 	}
 
-	public Strings(IEditor ed) {
+	public Strings(DrawableFactory ed) {
 		extent = new Vector<String>();
 		drawable = ed.getNewDrawable();
 	}

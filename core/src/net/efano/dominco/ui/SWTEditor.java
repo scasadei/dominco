@@ -7,7 +7,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.*;
 
-public class SWTEditor implements IEditor {
+public class SWTEditor implements DrawableFactory {
 
 	private Shell rootWidget;
 

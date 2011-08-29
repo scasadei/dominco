@@ -1,6 +1,6 @@
 package net.efano.dominco.ui;
 
-public interface IEditor {
+public interface DrawableFactory {
 
 	IDrawable getNewDrawable();
 }
