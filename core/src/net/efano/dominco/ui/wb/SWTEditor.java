@@ -57,7 +57,7 @@ public class SWTEditor implements DrawableFactory {
 		Runnable ru = new Runnable() {
 			@Override
 			public void run() {
-				Display display = Display.getDefault();
+				display = Display.getDefault();
 				init();
 				addContents();
 				shell.open();
