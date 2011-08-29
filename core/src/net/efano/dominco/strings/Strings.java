@@ -1,5 +1,6 @@
 package net.efano.dominco.strings;
 
+import java.util.Iterator;
 import java.util.Vector;
 
 import net.efano.dominco.ui.IDrawable;
@@ -36,6 +37,9 @@ public class Strings {
 	}
 	
 	public void draw() {
-		drawable.drawStrings();
+		Iterator<String> it = extent.iterator();
+		while (it.hasNext()) {
+		drawable.drawString(it.next()); 
+		}
 	}
 }

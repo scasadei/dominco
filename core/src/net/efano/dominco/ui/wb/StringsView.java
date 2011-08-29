@@ -4,7 +4,9 @@ package net.efano.dominco.ui.wb;
  * A View of a Strings object. It is constructed by means of an SWT Table.
  */
 
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableItem;
 
 import net.efano.dominco.strings.Strings;
 import net.efano.dominco.ui.IDrawable;
@@ -36,14 +38,19 @@ public class StringsView implements IDrawable {
 
 	@Override
 	public void drawStrings() {
-		// TODO Auto-generated method stub
-
+		strings.draw();
 	}
 
 	@Override
 	public void readStrings() {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void drawString(String aString) {
+		TableItem aTableItem = new TableItem(table, SWT.NONE);
+		aTableItem.setText(aString);
 	}
 
 }
