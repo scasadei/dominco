@@ -40,7 +40,8 @@ public class SWTEditor implements IEditor {
 	 */
 	public void open() {
 		Display display = Display.getDefault();
-		createContents();
+		init();
+		addContents();
 		shell.open();
 		shell.layout();
 		while (!shell.isDisposed()) {
@@ -50,10 +51,8 @@ public class SWTEditor implements IEditor {
 		}
 	}
 
-	/**
-	 * Create contents of the window.
-	 */
-	protected void createContents() {
+	
+	protected void init() {
 		shell = new Shell();
 		shell.setSize(450, 300);
 		shell.setText("Strings Viewer");
@@ -62,6 +61,9 @@ public class SWTEditor implements IEditor {
 		tabFolder.setBounds(23, 32, 156, 125);
 		tabFolder.setSelectionBackground(Display.getCurrent().getSystemColor(SWT.COLOR_TITLE_INACTIVE_BACKGROUND_GRADIENT));
 
+	}
+	
+	protected void addContents() {
 		Table table = addView("Nomi","nomi");
 		drawString(table,"Pinco Pallino Mezzolo");
 		drawString(table,"Gurdo");
