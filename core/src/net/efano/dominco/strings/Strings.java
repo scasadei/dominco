@@ -22,26 +22,33 @@ public class Strings  {
 		org.junit.Assert.assertEquals(numel(), 1);
 		add("pillo");
 		org.junit.Assert.assertEquals(numel(), 2);
-		
+
 		final net.efano.dominco.ui.wb.SWTEditor ed = new net.efano.dominco.ui.wb.SWTEditor();
-		ed.startInOwnThread();
-		makeView(ed);
-		ed.getDisplay().asyncExec(new Runnable() {
-			public void run () {
-				view.drawStrings();
+		synchronized (this) {
+			ed.startInOwnThread(); 
 		}
-		});
+		synchronized (this) {
+			makeView(ed);
 		}
-	
+		synchronized (this) {
+			ed.getDisplay().asyncExec(new Runnable() {
+				public void run () {
+					view.drawStrings();
+				}
+			});
+		}
+
+	}
+
 	private Vector<String> extent;
 	/*
 	 * An optional view
 	 */
 	private StringsView view;
 	// private IDrawable drawable;
-	
+
 	public void makeView(final SWTEditor df) {
-		
+
 		Display display = df.getDisplay();
 
 		display.asyncExec(new Runnable() {
@@ -49,10 +56,10 @@ public class Strings  {
 				IDrawable sw = df.getNewDrawable();
 				sw.setStrings(Strings.this);
 				// sw.drawStrings();
-		}
+			}
 		});
 	}
-	
+
 	public Strings() {
 		extent = new Vector<String>();
 	}
@@ -61,9 +68,9 @@ public class Strings  {
 	@Override
 	public String toString() {
 		return extent.toString();
-		
+
 	}
-	
+
 	public void add(String s) {
 		extent.add(s);
 	}
@@ -72,7 +79,7 @@ public class Strings  {
 		// TODO Auto-generated method stub
 		return extent.size();
 	}
-	
+
 	public void draw() {
 		Iterator<String> it = extent.iterator();
 		while (it.hasNext()) {
