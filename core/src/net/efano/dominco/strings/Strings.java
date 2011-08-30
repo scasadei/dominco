@@ -2,6 +2,8 @@ package net.efano.dominco.strings;
 
 import java.util.Iterator;
 import java.util.Vector;
+
+import net.efano.dominco.ui.DrawableFactory;
 import net.efano.dominco.ui.wb.SWTEditor;
 import net.efano.dominco.ui.wb.StringsView;
 
@@ -43,7 +45,7 @@ public class Strings  {
 	private StringsView view;
 	// private IDrawable drawable;
 
-	public void makeView(final SWTEditor df) throws InterruptedException {
+	public void makeView(final DrawableFactory df) throws InterruptedException {
 
 		
 		boolean dfReady = false;
@@ -54,6 +56,7 @@ public class Strings  {
 			catch (InterruptedException e) {}
 		}
 
+		// syncExec waits that argument terminates
     	df.getDisplay().syncExec(new Runnable() {
 			public void run () {
 				view = (StringsView) df.getNewDrawable();
@@ -78,11 +81,15 @@ public class Strings  {
 	}
 
 	public Object numel() {
-		// TODO Auto-generated method stub
 		return extent.size();
 	}
 
+	/*
+	 * Can be called only if view is not null. 
+	 * That is makeView must have been called before.
+	 */
 	public void draw() {
+		// shoud add code to clear the view (in case it's already showing some strings)
 		Iterator<String> it = extent.iterator();
 		while (it.hasNext()) {
 		view.drawString(it.next()); 

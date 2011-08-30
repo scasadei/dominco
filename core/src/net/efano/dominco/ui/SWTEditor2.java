@@ -71,4 +71,20 @@ public class SWTEditor2 implements DrawableFactory {
 		return null;
 	}
 
+
+
+	@Override
+	public boolean isReady() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
+	@Override
+	public Display getDisplay() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
