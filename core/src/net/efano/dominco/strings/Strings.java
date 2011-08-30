@@ -23,7 +23,7 @@ public class Strings  {
 		final SWTEditor ed = new SWTEditor();
 		
 		synchronized (this) {
-			ed.startInOwnThread(); 
+			ed.openInOwnThread(); 
 		}
 		synchronized (this) {
 			makeView(ed);

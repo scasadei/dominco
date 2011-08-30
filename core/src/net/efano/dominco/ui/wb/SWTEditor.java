@@ -9,6 +9,9 @@ import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.custom.ScrolledComposite;
+import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
@@ -50,9 +53,8 @@ public class SWTEditor implements DrawableFactory {
 	}
 
 	public void open() {
-		setDisplay(); 
 		init();
-		addContents();
+		// addContents();
 		shell.open();
 		shell.layout();
 		while (!shell.isDisposed()) {
@@ -61,9 +63,8 @@ public class SWTEditor implements DrawableFactory {
 			}
 		}
 	}
-
 	
-	public synchronized void  startInOwnThread() {
+	public synchronized void  openInOwnThread() {
 		Runnable ru = new Runnable() {
 			@Override
 			public void run() {
@@ -74,33 +75,41 @@ public class SWTEditor implements DrawableFactory {
 	}
 
 	public void init() {
+		setDisplay(); 
 		shell = new Shell();
 		shell.setSize(450, 300);
 		shell.setText("Strings Viewer");
 		
+		 shell.addListener (SWT.Resize,  new Listener () {
+			    public void handleEvent (Event e) {
+			      Rectangle rect = shell.getClientArea ();
+			      if (tabFolder!=null) {
+				  tabFolder.setBounds(0,0,shell.getSize().x,shell.getSize().y);
+			    }
+			      System.out.println(rect);
+			    }
+			  });
+		
+		 
 		tabFolder = new CTabFolder(shell, SWT.BORDER);
-		tabFolder.setBounds(23, 32, 156, 125);
+		// tabFolder.setBounds(23, 32, 156, 125);
+		tabFolder.setBounds(0,0,shell.getSize().x,shell.getSize().y);
 		tabFolder.setSelectionBackground(Display.getCurrent().getSystemColor(SWT.COLOR_TITLE_INACTIVE_BACKGROUND_GRADIENT));
 
 	}
 	
-	protected void addContents() {
+	private void addContents() {
 		Table table = addView("Nomi","nomi");
 		Table table_1 = addView("Citta","citta");
-		
 		drawString(table,"Pinco Pallino Mezzolo");
 		drawString(table,"Gurdo");
 		drawString(table,"Miolo");
-		
-		
-
 		drawString(table_1,"Rapigi");
 		drawString(table_1,"Rapigi");
 		drawString(table_1,"Rapigi");
 		drawString(table_1,"Rapigi");
 		drawString(table_1,"Rapigi");
 		drawString(table_1,"Megolo");
-
 	}
 
 	@Override
