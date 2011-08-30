@@ -2,11 +2,6 @@ package net.efano.dominco.strings;
 
 import java.util.Iterator;
 import java.util.Vector;
-
-import org.eclipse.swt.widgets.Display;
-
-import net.efano.dominco.ui.IDrawable;
-import net.efano.dominco.ui.DrawableFactory;
 import net.efano.dominco.ui.wb.SWTEditor;
 import net.efano.dominco.ui.wb.StringsView;
 
@@ -23,14 +18,18 @@ public class Strings  {
 		add("pillo");
 		org.junit.Assert.assertEquals(numel(), 2);
 
-		final net.efano.dominco.ui.wb.SWTEditor ed = new net.efano.dominco.ui.wb.SWTEditor();
+		final SWTEditor ed = new SWTEditor();
+		
 		synchronized (this) {
 			ed.startInOwnThread(); 
 		}
 		synchronized (this) {
 			makeView(ed);
 		}
-		synchronized (this) {
+	    synchronized (this) {
+	    	if (ed.getDisplay() == null) {
+	    		System.out.println("display at Strings.java%31 is null");
+	    	}
 			ed.getDisplay().asyncExec(new Runnable() {
 				public void run () {
 					view.drawStrings();
@@ -49,13 +48,14 @@ public class Strings  {
 
 	public void makeView(final SWTEditor df) {
 
-		Display display = df.getDisplay();
+    	if (df.getDisplay() == null) {
+    		System.out.println("display at line 52 of Strings.java is null");
+    	}
 
-		display.asyncExec(new Runnable() {
+    	df.getDisplay().syncExec(new Runnable() {
 			public void run () {
-				IDrawable sw = df.getNewDrawable();
-				sw.setStrings(Strings.this);
-				// sw.drawStrings();
+				view = (StringsView) df.getNewDrawable();
+				view.setStrings(Strings.this);
 			}
 		});
 	}
