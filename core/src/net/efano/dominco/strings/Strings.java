@@ -27,9 +27,6 @@ public class Strings  {
 			makeView(ed);
 		}
 	    synchronized (this) {
-	    	if (ed.getDisplay() == null) {
-	    		System.out.println("display at Strings.java%31 is null");
-	    	}
 			ed.getDisplay().asyncExec(new Runnable() {
 				public void run () {
 					view.drawStrings();

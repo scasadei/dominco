@@ -26,8 +26,12 @@ public class SWTEditor implements DrawableFactory {
 		// display = Display.getDefault(); -- this causes an error!
 	}
 	
-	public Display getDisplay() {
+	synchronized public Display getDisplay() {
 		return display;
+	}
+	
+	synchronized public void setDisplay() {
+		display = Display.getDefault();
 	}
 	
 	/**
@@ -44,7 +48,8 @@ public class SWTEditor implements DrawableFactory {
 	}
 
 	public void open() {
-		display = Display.getDefault();
+		setDisplay(); 
+		// display = Display.getDefault();
 		init();
 		addContents();
 		shell.open();
@@ -61,7 +66,7 @@ public class SWTEditor implements DrawableFactory {
 		Runnable ru = new Runnable() {
 			@Override
 			public void run() {
-				display = Display.getDefault();
+				setDisplay(); 
 				init();
 				addContents();
 				shell.open();
