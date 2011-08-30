@@ -22,6 +22,10 @@ public class SWTEditor implements DrawableFactory {
 	private CTabFolder tabFolder;
 	private Display display;
 	
+	public synchronized boolean isReady() {
+		return (display!=null && shell!=null && !shell.isDisposed());
+	}
+	
 	public SWTEditor() {
 		// display = Display.getDefault(); -- this causes an error!
 	}

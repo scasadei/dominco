@@ -7,12 +7,12 @@ import net.efano.dominco.ui.wb.StringsView;
 
 public class Strings  {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Strings strings = new Strings();
 		strings.test();
 	}
 	
-	public void test() {
+	public void test() throws InterruptedException {
 		add("ciccio");
 		org.junit.Assert.assertEquals(numel(), 1);
 		add("pillo");
@@ -43,11 +43,16 @@ public class Strings  {
 	private StringsView view;
 	// private IDrawable drawable;
 
-	public void makeView(final SWTEditor df) {
+	public void makeView(final SWTEditor df) throws InterruptedException {
 
-    	if (df.getDisplay() == null) {
-    		System.out.println("display at line 52 of Strings.java is null");
-    	}
+		
+		boolean dfReady = false;
+		while (!dfReady) {
+			dfReady = df.isReady();
+    		System.out.println("sleeping");
+			try {Thread.sleep(100);}
+			catch (InterruptedException e) {}
+		}
 
     	df.getDisplay().syncExec(new Runnable() {
 			public void run () {
