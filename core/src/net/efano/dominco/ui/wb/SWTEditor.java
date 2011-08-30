@@ -17,8 +17,6 @@ import org.eclipse.swt.widgets.TableItem;
 public class SWTEditor implements DrawableFactory {
 
 	protected Shell shell;
-	// private Table table;
-	// private Table table_1;
 	private CTabFolder tabFolder;
 	private Display display;
 	
@@ -53,7 +51,6 @@ public class SWTEditor implements DrawableFactory {
 
 	public void open() {
 		setDisplay(); 
-		// display = Display.getDefault();
 		init();
 		addContents();
 		shell.open();
@@ -70,16 +67,7 @@ public class SWTEditor implements DrawableFactory {
 		Runnable ru = new Runnable() {
 			@Override
 			public void run() {
-				setDisplay(); 
-				init();
-				addContents();
-				shell.open();
-				shell.layout();
-				while (!shell.isDisposed()) {
-					if (!display.readAndDispatch()) {
-						display.sleep();
-					}
-				}
+				open();
 			}
 		};
 		new Thread(ru).start();
