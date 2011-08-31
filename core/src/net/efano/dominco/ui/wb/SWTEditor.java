@@ -9,6 +9,8 @@ import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.custom.ScrolledComposite;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
@@ -54,7 +56,7 @@ public class SWTEditor implements DrawableFactory {
 
 	public void open() {
 		init();
-		// addContents();
+		addContents();
 		shell.open();
 		shell.layout();
 		while (!shell.isDisposed()) {
@@ -144,7 +146,16 @@ public class SWTEditor implements DrawableFactory {
 		scrolledComposite.setContent(table);
 		scrolledComposite.setMinSize(table.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 
-		
+	    tabFolder.addSelectionListener(new SelectionListener() {
+	        public void widgetSelected(SelectionEvent e) {
+	          System.out.println("Selected item index = " + tabFolder.getSelectionIndex());
+	          System.out.println("Selected item = " + (tabFolder.getSelection() == null ? "null" : tabFolder.getSelection().toString()));
+	        }
+	        public void widgetDefaultSelected(SelectionEvent e) {
+	            widgetSelected(e);
+	          }
+	    });
+	    		
 		return table;
 	}	
 }
