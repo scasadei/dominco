@@ -98,6 +98,16 @@ public class SWTEditor implements DrawableFactory {
 		tabFolder.setBounds(0,0,shell.getSize().x,shell.getSize().y);
 		tabFolder.setSelectionBackground(Display.getCurrent().getSystemColor(SWT.COLOR_TITLE_INACTIVE_BACKGROUND_GRADIENT));
 
+	    tabFolder.addSelectionListener(new SelectionListener() {
+	        public void widgetSelected(SelectionEvent e) {
+	          System.out.println("Selected item index = " + tabFolder.getSelectionIndex());
+	          System.out.println("Selected item = " + (tabFolder.getSelection() == null ? "null" : tabFolder.getSelection().toString()));
+	        }
+	        public void widgetDefaultSelected(SelectionEvent e) {
+	            widgetSelected(e);
+	          }
+	    });
+	    		
 	}
 	
 	private void addContents() {
@@ -146,16 +156,6 @@ public class SWTEditor implements DrawableFactory {
 		scrolledComposite.setContent(table);
 		scrolledComposite.setMinSize(table.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 
-	    tabFolder.addSelectionListener(new SelectionListener() {
-	        public void widgetSelected(SelectionEvent e) {
-	          System.out.println("Selected item index = " + tabFolder.getSelectionIndex());
-	          System.out.println("Selected item = " + (tabFolder.getSelection() == null ? "null" : tabFolder.getSelection().toString()));
-	        }
-	        public void widgetDefaultSelected(SelectionEvent e) {
-	            widgetSelected(e);
-	          }
-	    });
-	    		
 		return table;
 	}	
 }
