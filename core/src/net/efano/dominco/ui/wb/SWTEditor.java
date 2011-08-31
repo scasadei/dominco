@@ -86,7 +86,7 @@ public class SWTEditor implements DrawableFactory {
 			    public void handleEvent (Event e) {
 			      Rectangle rect = shell.getClientArea ();
 			      if (tabFolder!=null) {
-				  tabFolder.setBounds(0,0,shell.getSize().x,shell.getSize().y);
+				  tabFolder.setBounds(0,0,shell.getClientArea().width,shell.getClientArea().height);
 			    }
 			      System.out.println(rect);
 			    }
