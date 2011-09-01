@@ -3,7 +3,7 @@ package net.efano.dominco.strings;
 import java.util.Iterator;
 import java.util.Vector;
 
-import net.efano.dominco.ui.DrawableFactory;
+import net.efano.dominco.ui.IDrawableFactory;
 import net.efano.dominco.ui.wb.SWTEditor;
 import net.efano.dominco.ui.wb.StringsView;
 
@@ -45,7 +45,7 @@ public class Strings  {
 	private StringsView view;
 	// private IDrawable drawable;
 
-	public void makeView(final DrawableFactory df) throws InterruptedException {
+	public void makeView(final IDrawableFactory df) throws InterruptedException {
 
 		
 		boolean dfReady = false;

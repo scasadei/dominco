@@ -1,7 +1,7 @@
 package net.efano.dominco.ui.wb;
 
 import net.efano.dominco.ui.IDrawable;
-import net.efano.dominco.ui.DrawableFactory;
+import net.efano.dominco.ui.IDrawableFactory;
 
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 // import net.efano.dominco.ui.wb.StringsView;;
 
-public class SWTEditor implements DrawableFactory {
+public class SWTEditor implements IDrawableFactory {
 
 	protected Shell shell;
 	private CTabFolder tabFolder;
