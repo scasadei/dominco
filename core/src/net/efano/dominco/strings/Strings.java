@@ -4,8 +4,8 @@ import java.util.Iterator;
 import java.util.Vector;
 
 import net.efano.dominco.ui.IDrawableFactory;
-import net.efano.dominco.ui.wb.SWTEditor;
-import net.efano.dominco.ui.wb.StringsView;
+import net.efano.dominco.ui.swt.SWTEditor;
+import net.efano.dominco.ui.swt.StringsView;
 
 public class Strings  {
 

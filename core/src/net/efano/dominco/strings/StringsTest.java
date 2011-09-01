@@ -3,7 +3,7 @@ package net.efano.dominco.strings;
 import static org.junit.Assert.*;
 
 import net.efano.dominco.ui.IDrawable;
-import net.efano.dominco.ui.wb.StringsView;
+import net.efano.dominco.ui.swt.StringsView;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -40,7 +40,7 @@ public class StringsTest {
 		org.junit.Assert.assertEquals(strings.numel(), 1);
 		strings.add("pillo");
 		org.junit.Assert.assertEquals(strings.numel(), 2);
-		net.efano.dominco.ui.wb.SWTEditor ed = new net.efano.dominco.ui.wb.SWTEditor();
+		net.efano.dominco.ui.swt.SWTEditor ed = new net.efano.dominco.ui.swt.SWTEditor();
 		ed.init();
 		ed.open();
 		IDrawable sw = ed.getNewDrawable();

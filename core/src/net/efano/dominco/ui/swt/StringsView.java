@@ -1,4 +1,4 @@
-package net.efano.dominco.ui.wb;
+package net.efano.dominco.ui.swt;
 
 /*
  * A View of a Strings object. It is constructed by means of an SWT Table.

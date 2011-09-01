@@ -1,4 +1,4 @@
-package net.efano.dominco.ui.wb;
+package net.efano.dominco.ui.swt;
 
 import net.efano.dominco.ui.IDrawable;
 import net.efano.dominco.ui.IDrawableFactory;
