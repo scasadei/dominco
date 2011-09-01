@@ -1,7 +1,5 @@
 package net.efano.dominco.ui.swt;
 
-import net.efano.dominco.ui.IDrawable;
-import net.efano.dominco.ui.IDrawableFactory;
 
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;

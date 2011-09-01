@@ -2,7 +2,7 @@ package net.efano.dominco.strings;
 
 import static org.junit.Assert.*;
 
-import net.efano.dominco.ui.IDrawable;
+import net.efano.dominco.ui.swt.IDrawable;
 import net.efano.dominco.ui.swt.StringsView;
 
 import org.junit.After;

@@ -3,7 +3,7 @@ package net.efano.dominco.strings;
 import java.util.Iterator;
 import java.util.Vector;
 
-import net.efano.dominco.ui.IDrawableFactory;
+import net.efano.dominco.ui.swt.IDrawableFactory;
 import net.efano.dominco.ui.swt.SWTEditor;
 import net.efano.dominco.ui.swt.StringsView;
 

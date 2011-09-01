@@ -1,4 +1,4 @@
-package net.efano.dominco.ui;
+package net.efano.dominco.ui.swt;
 
 import net.efano.dominco.strings.*;
 

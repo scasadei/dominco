@@ -9,7 +9,6 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
 
 import net.efano.dominco.strings.Strings;
-import net.efano.dominco.ui.IDrawable;
 
 public class StringsView implements IDrawable {
 
