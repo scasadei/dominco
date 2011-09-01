@@ -137,6 +137,8 @@ public class SWTEditor implements DrawableFactory {
 	
 	private Table addView(String tableName, String columnName) {
 		CTabItem tbtmNomi = new CTabItem(tabFolder, SWT.NONE);
+		String ttstring = "Not much\n...for now";
+		tbtmNomi.setToolTipText ("TabItem toolTip: " + ttstring);
 		tbtmNomi.setText(tableName);
 
 		ScrolledComposite scrolledComposite = new ScrolledComposite(tabFolder, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
