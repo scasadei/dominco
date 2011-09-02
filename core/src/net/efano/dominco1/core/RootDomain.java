@@ -1,4 +1,4 @@
-package net.efano.dominco.oldstuff.core;
+package net.efano.dominco1.core;
 
 
 public class RootDomain extends Domain {
