@@ -4,10 +4,11 @@ import java.util.Iterator;
 import java.util.Vector;
 
 import net.efano.dominco.ui.swt.IDrawableFactory;
+import net.efano.dominco.ui.swt.IViewable;
 import net.efano.dominco.ui.swt.SWTEditor;
 import net.efano.dominco.ui.swt.StringsView;
 
-public class Strings  {
+public class Strings implements IViewable {
 
 	public static void main(String[] args) {
 		Strings strings = new Strings();
@@ -37,7 +38,7 @@ public class Strings  {
 				}
 			});
 		}
-		} catch (InterruptedException e) {e.printStackTrace();}
+		} finally {};// catch (InterruptedException e) {e.printStackTrace();}
 
 	}
 
@@ -48,7 +49,7 @@ public class Strings  {
 	private StringsView view;
 	// private IDrawable drawable;
 
-	public void makeView(final IDrawableFactory df) throws InterruptedException {
+	public void makeView(final IDrawableFactory df)  {
 
 		
 		boolean dfReady = false;
