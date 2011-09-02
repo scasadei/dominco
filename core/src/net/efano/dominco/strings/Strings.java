@@ -8,7 +8,7 @@ import net.efano.dominco.ui.swt.IViewable;
 import net.efano.dominco.ui.swt.StringsViewbook;
 import net.efano.dominco.ui.swt.StringsView;
 
-public class Strings implements IViewable {
+public class Strings {
 
 	public static void main(String[] args) {
 		Strings strings = new Strings();
