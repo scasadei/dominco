@@ -2,6 +2,8 @@ package net.efano.dominco;
 
 import java.util.Properties;
 
+import org.eclipse.swt.widgets.Table;
+
 import net.efano.dominco.ui.swt.DomainContextView;
 import net.efano.dominco.ui.swt.IViewable;
 import net.efano.dominco.ui.swt.IViewpageFactory;
@@ -9,7 +11,12 @@ import net.efano.dominco.ui.swt.IViewpageFactory;
 public class DomainContext implements IViewable {
 
 	private Properties properties;
-
+	/*
+	 * An optional gui element to show itself
+	 */
+	private DomainContextView viewpage;
+	
+	
 	@Override
 	public void makeView(final IViewpageFactory df)  {
 
@@ -25,8 +32,10 @@ public class DomainContext implements IViewable {
 		// syncExec waits that argument terminates
     	df.getDisplay().syncExec(new Runnable() {
 			public void run () {
-				view = (DomainContextView) df.getNewDrawable();
-				view.setViewable(DomainContext.this);
+				Table swtTable = df.getNewTable("DomContext",
+						new String []{"a","b"});
+				viewpage = new DomainContextView(swtTable);
+				viewpage.setViewable(DomainContext.this);
 			}
 		});
 	}
@@ -34,7 +43,6 @@ public class DomainContext implements IViewable {
 	@Override
 	public void draw() {
 		// TODO Auto-generated method stub
-		
 	}
 	
 }
