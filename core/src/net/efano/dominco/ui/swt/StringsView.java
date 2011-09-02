@@ -10,7 +10,7 @@ import org.eclipse.swt.widgets.TableItem;
 
 import net.efano.dominco.strings.Strings;
 
-public class StringsView implements IDrawable {
+public class StringsView implements IStringsViewpage {
 
 	Strings strings;
 	Table table;

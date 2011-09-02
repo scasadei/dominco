@@ -8,7 +8,7 @@ import net.efano.dominco.strings.*;
  * The method setStrings must be called before calling any of the other methods  
  */
 
-public interface IDrawable {
+public interface IStringsViewpage {
 
 	void setStrings(Strings aStrings);
 	Strings getStrings();

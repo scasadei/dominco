@@ -3,7 +3,7 @@ package net.efano.dominco.strings;
 import java.util.Iterator;
 import java.util.Vector;
 
-import net.efano.dominco.ui.swt.IDrawableFactory;
+import net.efano.dominco.ui.swt.IStringsViewpageFactory;
 import net.efano.dominco.ui.swt.IViewable;
 import net.efano.dominco.ui.swt.SWTEditor;
 import net.efano.dominco.ui.swt.StringsView;
@@ -49,7 +49,7 @@ public class Strings implements IViewable {
 	private StringsView view;
 	// private IDrawable drawable;
 
-	public void makeView(final IDrawableFactory df)  {
+	public void makeView(final IStringsViewpageFactory df)  {
 
 		
 		boolean dfReady = false;

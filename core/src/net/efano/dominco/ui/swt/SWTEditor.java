@@ -17,7 +17,7 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 // import net.efano.dominco.ui.wb.StringsView;;
 
-public class SWTEditor implements IDrawableFactory {
+public class SWTEditor implements IStringsViewpageFactory {
 
 	protected Shell shell;
 	private CTabFolder tabFolder;
@@ -123,12 +123,12 @@ public class SWTEditor implements IDrawableFactory {
 	}
 
 	@Override
-	public IDrawable getNewDrawable() {
+	public IStringsViewpage getNewDrawable() {
 		return new StringsView(addView("StringsView","Strings"));
 	}
 
 	@Override
-	public IDrawable getNewDrawable(String viewName,String [] colNames) {
+	public IStringsViewpage getNewDrawable(String viewName,String [] colNames) {
 		return new StringsView(addView(viewName,colNames));
 	}
 	

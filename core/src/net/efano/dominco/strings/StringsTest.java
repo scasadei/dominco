@@ -2,7 +2,7 @@ package net.efano.dominco.strings;
 
 import static org.junit.Assert.*;
 
-import net.efano.dominco.ui.swt.IDrawable;
+import net.efano.dominco.ui.swt.IStringsViewpage;
 import net.efano.dominco.ui.swt.StringsView;
 
 import org.junit.After;
@@ -43,7 +43,7 @@ public class StringsTest {
 		net.efano.dominco.ui.swt.SWTEditor ed = new net.efano.dominco.ui.swt.SWTEditor();
 		ed.init();
 		ed.open();
-		IDrawable sw = ed.getNewDrawable();
+		IStringsViewpage sw = ed.getNewDrawable();
 		sw.setStrings(strings);
 		sw.drawStrings();
 	}
