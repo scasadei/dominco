@@ -9,18 +9,20 @@ import net.efano.dominco.ui.swt.StringsView;
 
 public class Strings  {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		Strings strings = new Strings();
 		strings.test();
 	}
 	
-	public void test() throws InterruptedException {
+	public void test()  {
 		add("ciccio");
 		org.junit.Assert.assertEquals(numel(), 1);
 		add("pillo");
 		org.junit.Assert.assertEquals(numel(), 2);
 
 		final SWTEditor ed = new SWTEditor();
+		
+		try {
 		
 		synchronized (this) {
 			ed.openInOwnThread(); 
@@ -35,6 +37,7 @@ public class Strings  {
 				}
 			});
 		}
+		} catch (InterruptedException e) {e.printStackTrace();}
 
 	}
 
