@@ -7,4 +7,6 @@ public interface IDrawableFactory {
 	IDrawable getNewDrawable();
 	boolean isReady();
 	Display getDisplay();
+	IDrawable getNewDrawable(String viewName,String [] colNames);
+	
 }

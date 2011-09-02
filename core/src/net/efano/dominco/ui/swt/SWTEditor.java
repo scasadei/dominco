@@ -124,10 +124,21 @@ public class SWTEditor implements IDrawableFactory {
 
 	@Override
 	public IDrawable getNewDrawable() {
-		return new StringsView(addView("StringsView","Strings'"));
+		return new StringsView(addView("StringsView","Strings"));
 	}
 
+	@Override
+	public IDrawable getNewDrawable(String viewName,String [] colNames) {
+		return new StringsView(addView(viewName,colNames));
+	}
+	
 	private TableItem drawString(Table aTable,String aString) {
+		TableItem aTableItem = new TableItem(aTable, SWT.NONE);
+		aTableItem.setText(aString);
+		return aTableItem;
+	}
+
+	private TableItem drawStringRow(Table aTable,String aString []) {
 		TableItem aTableItem = new TableItem(aTable, SWT.NONE);
 		aTableItem.setText(aString);
 		return aTableItem;
@@ -158,4 +169,34 @@ public class SWTEditor implements IDrawableFactory {
 
 		return table;
 	}	
+	
+	private Table addView(String tableName, String columnNames []) {
+		CTabItem tbtmNomi = new CTabItem(tabFolder, SWT.NONE);
+		String ttstring = "Not much\n...for now";
+		tbtmNomi.setToolTipText ("TabItem toolTip: " + ttstring);
+		tbtmNomi.setText(tableName);
+
+		ScrolledComposite scrolledComposite = new ScrolledComposite(tabFolder, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
+		tbtmNomi.setControl(scrolledComposite);
+
+		scrolledComposite.setExpandHorizontal(true);
+		scrolledComposite.setExpandVertical(true);
+
+		Table table = new Table(scrolledComposite, SWT.BORDER | SWT.FULL_SELECTION);
+		table.setHeaderVisible(true);
+		table.setLinesVisible(true);
+
+		for (int icol=0; icol<columnNames.length; icol++) {
+		TableColumn tblclmnNomi = new TableColumn(table, SWT.NONE);
+		tblclmnNomi.setWidth(100);
+		tblclmnNomi.setText(columnNames[icol]);
+		}
+		
+		scrolledComposite.setContent(table);
+		scrolledComposite.setMinSize(table.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+
+		return table;
+		
+	}	
+	
 }
