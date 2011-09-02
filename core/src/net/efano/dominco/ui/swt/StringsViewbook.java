@@ -123,12 +123,12 @@ public class StringsViewbook implements IStringsViewpageFactory {
 	}
 
 	@Override
-	public IStringsViewpage getNewDrawable() {
+	public IStringsViewpage getNewViewpage() {
 		return new StringsView(addView("StringsView","Strings"));
 	}
 
 	@Override
-	public IStringsViewpage getNewDrawable(String viewName,String [] colNames) {
+	public IStringsViewpage getNewViewpage(String viewName,String [] colNames) {
 		return new StringsView(addView(viewName,colNames));
 	}
 	

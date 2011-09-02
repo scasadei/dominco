@@ -63,7 +63,7 @@ public class Strings implements IViewable {
 		// syncExec waits that argument terminates
     	df.getDisplay().syncExec(new Runnable() {
 			public void run () {
-				view = (StringsView) df.getNewDrawable();
+				view = (StringsView) df.getNewViewpage();
 				view.setStrings(Strings.this);
 			}
 		});

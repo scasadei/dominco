@@ -43,7 +43,7 @@ public class StringsTest {
 		net.efano.dominco.ui.swt.StringsViewbook ed = new net.efano.dominco.ui.swt.StringsViewbook();
 		ed.init();
 		ed.open();
-		IStringsViewpage sw = ed.getNewDrawable();
+		IStringsViewpage sw = ed.getNewViewpage();
 		sw.setStrings(strings);
 		sw.drawStrings();
 	}

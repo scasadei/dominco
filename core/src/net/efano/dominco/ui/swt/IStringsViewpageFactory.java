@@ -4,9 +4,9 @@ import org.eclipse.swt.widgets.Display;
 
 public interface IStringsViewpageFactory {
 
-	IStringsViewpage getNewDrawable();
+	IStringsViewpage getNewViewpage();
 	boolean isReady();
 	Display getDisplay();
-	IStringsViewpage getNewDrawable(String viewName,String [] colNames);
+	IStringsViewpage getNewViewpage(String pageName,String [] colNames);
 	
 }
