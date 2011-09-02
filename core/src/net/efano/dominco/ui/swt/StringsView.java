@@ -46,7 +46,6 @@ public class StringsView implements IStringsViewpage {
 
 	}
 
-	@Override
 	public void drawString(String aString) {
 		TableItem aTableItem = new TableItem(table, SWT.NONE);
 		aTableItem.setText(aString);
