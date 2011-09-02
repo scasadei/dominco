@@ -5,6 +5,7 @@ import java.util.Vector;
 
 import net.efano.dominco.ui.swt.IDrawableFactory;
 import net.efano.dominco.ui.swt.IViewable;
+import net.efano.dominco.ui.swt.IViewpageFactory;
 import net.efano.dominco.ui.swt.SWTEditor;
 import net.efano.dominco.ui.swt.StringsView;
 
@@ -49,9 +50,10 @@ public class Strings implements IViewable {
 	private StringsView view;
 	// private IDrawable drawable;
 
-	public void makeView(final IDrawableFactory df)  {
+	@Override
+	public void makeView(final IViewpageFactory df)  {
 
-		
+		// sleep until the df is ready
 		boolean dfReady = false;
 		while (!dfReady) {
 			dfReady = df.isReady();
@@ -96,7 +98,7 @@ public class Strings implements IViewable {
 		// shoud add code to clear the view (in case it's already showing some strings)
 		Iterator<String> it = extent.iterator();
 		while (it.hasNext()) {
-		view.drawString(it.next()); 
+		view.drawRow(it.next()); 
 		}
 	}
 }

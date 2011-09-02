@@ -46,8 +46,8 @@ public class StringsView implements IDrawable {
 
 	}
 
-	@Override
-	public void drawString(String aString) {
+
+	public void drawRow(String aString) {
 		TableItem aTableItem = new TableItem(table, SWT.NONE);
 		aTableItem.setText(aString);
 	}

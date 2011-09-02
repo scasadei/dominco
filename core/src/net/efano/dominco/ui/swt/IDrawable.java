@@ -13,7 +13,7 @@ public interface IDrawable {
 	void setStrings(Strings aStrings);
 	Strings getStrings();
 	void drawStrings();
-	void drawString(String aString);
+	// void drawString(String aString);
 	void readStrings();
 	
 }
