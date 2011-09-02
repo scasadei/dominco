@@ -1,9 +1,9 @@
-package net.efano.dominco.core;
+package net.efano.dominco.oldstuff.core;
 
 
 import java.util.Date;
 
-import net.efano.dominco.core.Frame;
+import net.efano.dominco.oldstuff.core.Frame;
 
 public class SessionFrame extends Frame {
 

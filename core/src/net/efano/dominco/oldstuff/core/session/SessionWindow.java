@@ -1,4 +1,4 @@
-package net.efano.dominco.core.session;
+package net.efano.dominco.oldstuff.core.session;
 
 import java.awt.EventQueue;
 

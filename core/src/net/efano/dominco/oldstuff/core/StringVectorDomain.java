@@ -1,4 +1,4 @@
-package net.efano.dominco.core;
+package net.efano.dominco.oldstuff.core;
 
 import java.util.Vector;
 import java.util.List;
