@@ -17,7 +17,7 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 // import net.efano.dominco.ui.wb.StringsView;;
 
-public class SWTEditor implements IStringsViewpageFactory {
+public class StringsViewbook implements IStringsViewpageFactory {
 
 	protected Shell shell;
 	private CTabFolder tabFolder;
@@ -27,7 +27,7 @@ public class SWTEditor implements IStringsViewpageFactory {
 		return (display!=null && shell!=null && !shell.isDisposed());
 	}
 	
-	public SWTEditor() {
+	public StringsViewbook() {
 		// display = Display.getDefault(); -- this causes an error!
 	}
 	
@@ -45,7 +45,7 @@ public class SWTEditor implements IStringsViewpageFactory {
 	 */
 	public static void main(String[] args) {
 		try {
-			SWTEditor window = new SWTEditor();
+			StringsViewbook window = new StringsViewbook();
 			window.open();
 		} catch (Exception e) {
 			e.printStackTrace();

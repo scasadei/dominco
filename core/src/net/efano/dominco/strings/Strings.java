@@ -5,7 +5,7 @@ import java.util.Vector;
 
 import net.efano.dominco.ui.swt.IStringsViewpageFactory;
 import net.efano.dominco.ui.swt.IViewable;
-import net.efano.dominco.ui.swt.SWTEditor;
+import net.efano.dominco.ui.swt.StringsViewbook;
 import net.efano.dominco.ui.swt.StringsView;
 
 public class Strings implements IViewable {
@@ -21,7 +21,7 @@ public class Strings implements IViewable {
 		add("pillo");
 		org.junit.Assert.assertEquals(numel(), 2);
 
-		final SWTEditor ed = new SWTEditor();
+		final StringsViewbook ed = new StringsViewbook();
 		
 		try {
 		
