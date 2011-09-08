@@ -3,7 +3,6 @@ package net.efano.dominco.strings;
 import static org.junit.Assert.*;
 
 import net.efano.dominco.ui.swt.IStringsViewpage;
-import net.efano.dominco.ui.swt.StringsView;
 
 import org.junit.After;
 import org.junit.AfterClass;

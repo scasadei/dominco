@@ -4,7 +4,6 @@ import java.util.Iterator;
 import java.util.Vector;
 
 import net.efano.dominco.ui.swt.IStringsViewpageFactory;
-import net.efano.dominco.ui.swt.IViewable;
 import net.efano.dominco.ui.swt.StringsViewbook;
 import net.efano.dominco.ui.swt.StringsView;
 
