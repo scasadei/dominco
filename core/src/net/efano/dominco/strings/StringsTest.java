@@ -39,7 +39,7 @@ public class StringsTest {
 		org.junit.Assert.assertEquals(strings.numel(), 1);
 		strings.add("pillo");
 		org.junit.Assert.assertEquals(strings.numel(), 2);
-		net.efano.dominco.ui.swt.StringsViewbook ed = new net.efano.dominco.ui.swt.StringsViewbook();
+		net.efano.dominco.ui.swt.StringsViewbookAsTabbedTables ed = new net.efano.dominco.ui.swt.StringsViewbookAsTabbedTables();
 		ed.init();
 		ed.open();
 		IStringsViewpage sw = ed.getNewViewpage();

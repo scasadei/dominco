@@ -3,7 +3,7 @@ package net.efano.dominco.strings;
 import java.util.Iterator;
 import java.util.Vector;
 import net.efano.dominco.ui.swt.IStringsViewpageFactory;
-import net.efano.dominco.ui.swt.StringsViewbook;
+import net.efano.dominco.ui.swt.StringsViewbookAsTabbedTables;
 import net.efano.dominco.ui.swt.StringsViewAsTable;
 
 public class Strings {
@@ -19,7 +19,7 @@ public class Strings {
 		add("pillo");
 		org.junit.Assert.assertEquals(numel(), 2);
 
-		final StringsViewbook ed = new StringsViewbook();
+		final StringsViewbookAsTabbedTables ed = new StringsViewbookAsTabbedTables();
 		
 		try {
 		
