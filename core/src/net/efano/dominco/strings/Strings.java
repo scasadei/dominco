@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Vector;
 import net.efano.dominco.ui.swt.IStringsViewpageFactory;
 import net.efano.dominco.ui.swt.StringsViewbook;
-import net.efano.dominco.ui.swt.StringsView;
+import net.efano.dominco.ui.swt.StringsViewAsTable;
 
 public class Strings {
 
@@ -44,7 +44,7 @@ public class Strings {
 	/*
 	 * An optional view
 	 */
-	private StringsView view;
+	private StringsViewAsTable view;
 	// private IDrawable drawable;
 
 	public void makeViewAndSitOnIt(final IStringsViewpageFactory df)  {
@@ -53,7 +53,7 @@ public class Strings {
 		boolean dfReady = false;
 		while (!dfReady) {
 			dfReady = df.isReady();
-    		System.out.println("waiting for ViewpageFactory is become ready");
+    		System.out.println("waiting for ViewpageFactory to become ready");
 			try {Thread.sleep(100);}
 			catch (InterruptedException e) {}
 		}
@@ -61,7 +61,7 @@ public class Strings {
 		// syncExec waits that argument terminates
     	df.getDisplay().syncExec(new Runnable() {
 			public void run () {
-				view = (StringsView) df.getNewViewpage();
+				view = (StringsViewAsTable) df.getNewViewpage();
 				view.setStrings(Strings.this);
 			}
 		});

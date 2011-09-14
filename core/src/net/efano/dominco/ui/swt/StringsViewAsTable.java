@@ -10,16 +10,16 @@ import org.eclipse.swt.widgets.TableItem;
 
 import net.efano.dominco.strings.Strings;
 
-public class StringsView implements IStringsViewpage {
+public class StringsViewAsTable implements IStringsViewpage {
 
 	Strings strings;
 	Table table;
 
-	public StringsView(Table aTable) {
+	public StringsViewAsTable(Table aTable) {
 		table = aTable;
 	}
 
-	public StringsView(Strings aStrings, Table aTable) {
+	public StringsViewAsTable(Strings aStrings, Table aTable) {
 		table = aTable;
 		// set strings via setStrings to enforce the IDrawable contract
 		setStrings(aStrings);
