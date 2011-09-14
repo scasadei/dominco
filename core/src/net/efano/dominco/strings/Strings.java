@@ -5,44 +5,10 @@ import java.util.Vector;
 
 import net.efano.dominco.strings.ui.IStringsViewpage;
 import net.efano.dominco.strings.ui.IStringsViewpageFactory;
-import net.efano.dominco.strings.ui.swt.StringsViewAsTable;
+// import net.efano.dominco.strings.ui.swt.StringsViewAsTable;
 // import net.efano.dominco.strings.ui.swt.StringsViewbookAsTabbedTables;
 
 public class Strings {
-
-/*
-	public static void main(String[] args) {
-		Strings strings = new Strings();
-		strings.test();
-	}
-	
-	public void test()  {
-		add("ciccio");
-		org.junit.Assert.assertEquals(numel(), 1);
-		add("pillo");
-		org.junit.Assert.assertEquals(numel(), 2);
-
-		final StringsViewbookAsTabbedTables ed = new StringsViewbookAsTabbedTables();
-		
-		try {
-		
-		synchronized (this) {
-			ed.openInOwnThread(); 
-		}
-		synchronized (this) {
-			makeViewAndSitOnIt(ed);
-		}
-	    synchronized (this) {
-			ed.getDisplay().asyncExec(new Runnable() {
-				public void run () {
-					view.drawStrings();
-				}
-			});
-		}
-		} finally {};// catch (InterruptedException e) {e.printStackTrace();}
-
-	}
-*/
 	
 	public IStringsViewpage getView() {
 		return view;
@@ -70,7 +36,7 @@ public class Strings {
 		df.syncExec(
 				new Runnable() {
 					public void run () {
-						view = (StringsViewAsTable) df.getNewViewpage();
+						view = df.getNewViewpage();
 						view.setStrings(Strings.this);
 					}
 				});
