@@ -3,6 +3,7 @@ package net.efano.dominco.strings;
 import java.util.Iterator;
 import java.util.Vector;
 
+import net.efano.dominco.strings.ui.IStringsViewpage;
 import net.efano.dominco.strings.ui.IStringsViewpageFactory;
 import net.efano.dominco.strings.ui.swt.StringsViewAsTable;
 import net.efano.dominco.strings.ui.swt.StringsViewbookAsTabbedTables;
@@ -45,7 +46,7 @@ public class Strings {
 	/*
 	 * An optional view
 	 */
-	private StringsViewAsTable view;
+	private IStringsViewpage view;
 	// private IDrawable drawable;
 
 	public void makeViewAndSitOnIt(final IStringsViewpageFactory df)  {
@@ -61,13 +62,12 @@ public class Strings {
 
 		// syncExec waits that argument terminates
 		df.syncExec(
-    	// df.getDisplay().syncExec(
-    			new Runnable() {
-			public void run () {
-				view = (StringsViewAsTable) df.getNewViewpage();
-				view.setStrings(Strings.this);
-			}
-		});
+				new Runnable() {
+					public void run () {
+						view = (StringsViewAsTable) df.getNewViewpage();
+						view.setStrings(Strings.this);
+					}
+				});
 	}
 
 	public Strings() {

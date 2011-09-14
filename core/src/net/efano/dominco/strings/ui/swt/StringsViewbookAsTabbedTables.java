@@ -141,7 +141,7 @@ public class StringsViewbookAsTabbedTables implements IStringsViewpageFactory {
 		return aTableItem;
 	}
 
-	private TableItem drawStringRow(Table aTable,String aString []) {
+	public TableItem drawStringRow(Table aTable,String aString []) {
 		TableItem aTableItem = new TableItem(aTable, SWT.NONE);
 		aTableItem.setText(aString);
 		return aTableItem;

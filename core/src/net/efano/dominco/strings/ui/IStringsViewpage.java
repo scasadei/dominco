@@ -13,6 +13,7 @@ public interface IStringsViewpage {
 	void setStrings(Strings aStrings);
 	Strings getStrings();
 	void drawStrings();
+	void drawString(String aString);
 	void readStrings();
 	
 }

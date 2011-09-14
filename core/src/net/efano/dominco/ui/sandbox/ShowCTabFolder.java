@@ -62,7 +62,7 @@ public class ShowCTabFolder {
 
     // Add a listener to get the close button on each tab
     tabFolder.addCTabFolderListener(new CTabFolderAdapter() {
-      public void itemClosed(CTabFolderEvent event) {}
+      public void itemClosed(final CTabFolderEvent event) {}
     });
   }
 
