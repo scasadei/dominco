@@ -122,8 +122,8 @@ public class Viewbook implements IViewpageFactory {
 	}
 
 	@Override
-	public Table getNewTable(String viewName,String [] colNames) {
-		return addView(viewName,colNames);
+	public IViewpage getNewTable(String viewName,String [] colNames) {
+		return new DomainViewAsTable(addView(viewName,colNames));
 	}
 	
 	private TableItem drawString(Table aTable,String aString) {

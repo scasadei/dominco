@@ -1,7 +1,5 @@
 package net.efano.dominco.ui.swt;
 
-import net.efano.dominco.strings.*;
-
 /*
  * A GUI object to be attached to a Viewable object (via the method setViewable) 
  * so as to provide interactive functionality for viewing and editing such object 
