@@ -27,7 +27,7 @@ public class Strings {
 			ed.openInOwnThread(); 
 		}
 		synchronized (this) {
-			makeView(ed);
+			makeViewAndSitOnIt(ed);
 		}
 	    synchronized (this) {
 			ed.getDisplay().asyncExec(new Runnable() {
@@ -47,7 +47,7 @@ public class Strings {
 	private StringsView view;
 	// private IDrawable drawable;
 
-	public void makeView(final IStringsViewpageFactory df)  {
+	public void makeViewAndSitOnIt(final IStringsViewpageFactory df)  {
 
 		
 		boolean dfReady = false;
