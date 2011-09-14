@@ -1,7 +1,5 @@
 package net.efano.dominco.ui.swt;
 
-import org.eclipse.swt.widgets.Table;
-
 public interface IViewpageFactory {
 
 	boolean isReady();

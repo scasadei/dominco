@@ -1,6 +1,6 @@
 package net.efano.dominco.strings;
 
-import static org.junit.Assert.*;
+// import static org.junit.Assert.*;
 
 import net.efano.dominco.ui.swt.IStringsViewpage;
 

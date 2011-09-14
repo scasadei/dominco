@@ -10,16 +10,16 @@ import org.eclipse.swt.widgets.TableItem;
 
 import net.efano.dominco.DomainContext;
 
-public class DomainContextView implements IViewpage {
+public class DomainContextViewAsTable implements IViewpage {
 
 	DomainContext dc;
 	Table table;
 
-	public DomainContextView(Table aTable) {
+	public DomainContextViewAsTable(Table aTable) {
 		table = aTable;
 	}
 
-	public DomainContextView(DomainContext aDomainContext, Table aTable) {
+	public DomainContextViewAsTable(DomainContext aDomainContext, Table aTable) {
 		table = aTable;
 		// set strings via setStrings to enforce the IDrawable contract
 		setViewable(aDomainContext);

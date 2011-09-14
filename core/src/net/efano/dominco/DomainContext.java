@@ -4,7 +4,7 @@ import java.util.Properties;
 
 import org.eclipse.swt.widgets.Table;
 
-import net.efano.dominco.ui.swt.DomainContextView;
+import net.efano.dominco.ui.swt.DomainContextViewAsTable;
 import net.efano.dominco.ui.swt.IViewable;
 import net.efano.dominco.ui.swt.IViewpageFactory;
 
@@ -14,7 +14,7 @@ public class DomainContext implements IViewable {
 	/*
 	 * An optional gui element to show itself
 	 */
-	private DomainContextView viewpage;
+	private DomainContextViewAsTable viewpage;
 	
 	
 	@Override
@@ -35,7 +35,7 @@ public class DomainContext implements IViewable {
 			public void run () {
 				Table swtTable = df.getNewTable("DomContext",
 						new String []{"a","b"});
-				viewpage = new DomainContextView(swtTable);
+				viewpage = new DomainContextViewAsTable(swtTable);
 				viewpage.setViewable(DomainContext.this);
 			}
 		});
