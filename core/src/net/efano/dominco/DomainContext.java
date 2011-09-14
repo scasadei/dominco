@@ -18,7 +18,7 @@ public class DomainContext implements IViewable {
 	
 	
 	@Override
-	public void makeView(final IViewpageFactory df)  {
+	public void makeViewAndSitOnIt(final IViewpageFactory df)  {
 
 		// sleep until the df is ready
 		boolean dfReady = false;
@@ -33,7 +33,7 @@ public class DomainContext implements IViewable {
     	// df.getDisplay().syncExec(new Runnable() {
         df.syncExec(new Runnable() {
 			public void run () {
-				Table swtTable = df.getNewTable("DomContext",
+				Table swtTable = df.getNewViewpage("DomContext",
 						new String []{"a","b"});
 				viewpage = new DomainContextViewAsTable(swtTable);
 				viewpage.setViewable(DomainContext.this);

@@ -125,7 +125,7 @@ public class ViewbookAsTabbedTables implements IViewpageFactory {
 	}
 
 	@Override
-	public IViewpage getNewTable(String viewName,String [] colNames) {
+	public IViewpage getNewViewpage(String viewName,String [] colNames) {
 		return new DomainViewAsTable(addView(viewName,colNames));
 	}
 	

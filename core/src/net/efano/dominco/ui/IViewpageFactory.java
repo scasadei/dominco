@@ -4,6 +4,6 @@ public interface IViewpageFactory {
 
 	boolean isReady();
 	void syncExec(Runnable aRunnable);
-	IViewpage getNewTable(String pageName,String [] colNames);
+	IViewpage getNewViewpage(String pageName,String [] colNames);
 	
 }
