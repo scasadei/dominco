@@ -16,7 +16,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 
-public class Viewbook implements IViewpageFactory {
+public class ViewbookAsTabbedTables implements IViewpageFactory {
 
 	protected Shell shell;
 	private CTabFolder tabFolder;
@@ -26,7 +26,7 @@ public class Viewbook implements IViewpageFactory {
 		return (display!=null && shell!=null && !shell.isDisposed());
 	}
 	
-	public Viewbook() {
+	public ViewbookAsTabbedTables() {
 		// display = Display.getDefault(); -- this causes an error!
 	}
 	
@@ -44,7 +44,7 @@ public class Viewbook implements IViewpageFactory {
 	 */
 	public static void main(String[] args) {
 		try {
-			Viewbook window = new Viewbook();
+			ViewbookAsTabbedTables window = new ViewbookAsTabbedTables();
 			window.open();
 		} catch (Exception e) {
 			e.printStackTrace();
