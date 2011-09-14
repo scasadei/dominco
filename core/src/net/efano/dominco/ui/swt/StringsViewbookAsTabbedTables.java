@@ -197,6 +197,11 @@ public class StringsViewbookAsTabbedTables implements IStringsViewpageFactory {
 
 		return table;
 		
+	}
+
+	@Override
+	public void syncExec(Runnable aRunnable) {
+		display.syncExec(aRunnable);
 	}	
 	
 }

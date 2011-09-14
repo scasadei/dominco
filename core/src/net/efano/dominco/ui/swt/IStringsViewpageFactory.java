@@ -1,12 +1,11 @@
 package net.efano.dominco.ui.swt;
 
-import org.eclipse.swt.widgets.Display;
-
 public interface IStringsViewpageFactory {
 
 	IStringsViewpage getNewViewpage();
 	boolean isReady();
-	Display getDisplay();
+	void syncExec(Runnable aRunnable);
+	//Display getDisplay();
 	IStringsViewpage getNewViewpage(String pageName,String [] colNames);
 	
 }

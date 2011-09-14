@@ -6,8 +6,9 @@ import org.eclipse.swt.widgets.Table;
 public interface IViewpageFactory {
 
 	boolean isReady();
-	Display getDisplay();
+	// Display getDisplay();
 	// IViewpage getNewViewpage();
+	void syncExec(Runnable aRunnable);
 	Table getNewTable(String pageName,String [] colNames);
 	
 }

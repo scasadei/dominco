@@ -59,7 +59,9 @@ public class Strings {
 		}
 
 		// syncExec waits that argument terminates
-    	df.getDisplay().syncExec(new Runnable() {
+		df.syncExec(
+    	// df.getDisplay().syncExec(
+    			new Runnable() {
 			public void run () {
 				view = (StringsViewAsTable) df.getNewViewpage();
 				view.setStrings(Strings.this);

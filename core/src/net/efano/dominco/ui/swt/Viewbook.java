@@ -15,7 +15,6 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
-// import net.efano.dominco.ui.wb.StringsView;;
 
 public class Viewbook implements IViewpageFactory {
 
@@ -31,9 +30,9 @@ public class Viewbook implements IViewpageFactory {
 		// display = Display.getDefault(); -- this causes an error!
 	}
 	
-	synchronized public Display getDisplay() {
-		return display;
-	}
+	//synchronized public Display getDisplay() {
+	//	return display;
+	//}
 	
 	synchronized public void setDisplay() {
 		display = Display.getDefault();
@@ -193,5 +192,11 @@ public class Viewbook implements IViewpageFactory {
 		return table;
 		
 	}	
-	
+
+
+	@Override
+	public void syncExec(Runnable aRunnable) {
+		display.syncExec(aRunnable);
+	}	
+
 }

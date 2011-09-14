@@ -30,7 +30,8 @@ public class DomainContext implements IViewable {
 		}
 
 		// syncExec waits that argument terminates
-    	df.getDisplay().syncExec(new Runnable() {
+    	// df.getDisplay().syncExec(new Runnable() {
+        df.syncExec(new Runnable() {
 			public void run () {
 				Table swtTable = df.getNewTable("DomContext",
 						new String []{"a","b"});
