@@ -1,5 +1,8 @@
-package net.efano.dominco.ui.swt;
+package net.efano.dominco.strings.ui.swt;
 
+
+import net.efano.dominco.strings.ui.IStringsViewpage;
+import net.efano.dominco.strings.ui.IStringsViewpageFactory;
 
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;

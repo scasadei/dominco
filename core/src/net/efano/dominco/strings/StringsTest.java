@@ -2,7 +2,7 @@ package net.efano.dominco.strings;
 
 // import static org.junit.Assert.*;
 
-import net.efano.dominco.ui.swt.IStringsViewpage;
+import net.efano.dominco.strings.ui.IStringsViewpage;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -39,7 +39,7 @@ public class StringsTest {
 		org.junit.Assert.assertEquals(strings.numel(), 1);
 		strings.add("pillo");
 		org.junit.Assert.assertEquals(strings.numel(), 2);
-		net.efano.dominco.ui.swt.StringsViewbookAsTabbedTables ed = new net.efano.dominco.ui.swt.StringsViewbookAsTabbedTables();
+		net.efano.dominco.strings.ui.swt.StringsViewbookAsTabbedTables ed = new net.efano.dominco.strings.ui.swt.StringsViewbookAsTabbedTables();
 		ed.init();
 		ed.open();
 		IStringsViewpage sw = ed.getNewViewpage();

@@ -9,6 +9,8 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
 
 import net.efano.dominco.DomainContext;
+import net.efano.dominco.ui.IViewable;
+import net.efano.dominco.ui.IViewpage;
 
 public class DomainContextViewAsTable implements IViewpage {
 

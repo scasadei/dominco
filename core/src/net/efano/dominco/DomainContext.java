@@ -4,9 +4,9 @@ import java.util.Properties;
 
 import org.eclipse.swt.widgets.Table;
 
+import net.efano.dominco.ui.IViewable;
+import net.efano.dominco.ui.IViewpageFactory;
 import net.efano.dominco.ui.swt.DomainContextViewAsTable;
-import net.efano.dominco.ui.swt.IViewable;
-import net.efano.dominco.ui.swt.IViewpageFactory;
 
 public class DomainContext implements IViewable {
 

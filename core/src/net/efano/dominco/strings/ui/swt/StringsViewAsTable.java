@@ -1,4 +1,4 @@
-package net.efano.dominco.ui.swt;
+package net.efano.dominco.strings.ui.swt;
 
 /*
  * A View of a Strings object. It is constructed by means of an SWT Table.
@@ -9,6 +9,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;
 
 import net.efano.dominco.strings.Strings;
+import net.efano.dominco.strings.ui.IStringsViewpage;
 
 public class StringsViewAsTable implements IStringsViewpage {
 

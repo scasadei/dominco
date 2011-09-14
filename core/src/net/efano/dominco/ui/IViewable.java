@@ -1,4 +1,4 @@
-package net.efano.dominco.ui.swt;
+package net.efano.dominco.ui;
 
 public interface IViewable {
 

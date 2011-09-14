@@ -1,4 +1,4 @@
-package net.efano.dominco.ui.swt;
+package net.efano.dominco.ui;
 
 /*
  * A GUI object to be attached to a Viewable object (via the method setViewable) 

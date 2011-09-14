@@ -1,6 +1,9 @@
 package net.efano.dominco.ui.swt;
 
 
+import net.efano.dominco.ui.IViewpage;
+import net.efano.dominco.ui.IViewpageFactory;
+
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.custom.CTabFolder;

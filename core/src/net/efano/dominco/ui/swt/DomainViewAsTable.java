@@ -4,6 +4,9 @@ package net.efano.dominco.ui.swt;
  * A View of a Strings object. It is constructed by means of an SWT Table.
  */
 
+import net.efano.dominco.ui.IViewable;
+import net.efano.dominco.ui.IViewpage;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableItem;

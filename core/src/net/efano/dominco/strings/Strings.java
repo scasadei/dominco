@@ -2,9 +2,10 @@ package net.efano.dominco.strings;
 
 import java.util.Iterator;
 import java.util.Vector;
-import net.efano.dominco.ui.swt.IStringsViewpageFactory;
-import net.efano.dominco.ui.swt.StringsViewbookAsTabbedTables;
-import net.efano.dominco.ui.swt.StringsViewAsTable;
+
+import net.efano.dominco.strings.ui.IStringsViewpageFactory;
+import net.efano.dominco.strings.ui.swt.StringsViewAsTable;
+import net.efano.dominco.strings.ui.swt.StringsViewbookAsTabbedTables;
 
 public class Strings {
 
