@@ -14,6 +14,7 @@ public class DomainContext implements IViewable {
 	 */
 	private IViewpage viewpage;
 	
+	public DomainContext() {}
 	
 	@Override
 	public void makeViewAndSitOnIt(final IViewpageFactory df)  {
