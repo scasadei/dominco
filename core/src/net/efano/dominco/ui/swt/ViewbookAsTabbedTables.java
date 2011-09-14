@@ -202,4 +202,9 @@ public class ViewbookAsTabbedTables implements IViewpageFactory {
 		display.syncExec(aRunnable);
 	}	
 
+	@Override
+	public void asyncExec(Runnable aRunnable) {
+		display.asyncExec(aRunnable);
+	}	
+
 }

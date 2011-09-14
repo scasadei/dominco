@@ -32,7 +32,22 @@ public class TestDomain {
 	public void test() {
 		DomainContext dc = new DomainContext();
 		final ViewbookAsTabbedTables ed = new ViewbookAsTabbedTables();
-		dc.makeViewAndSitOnIt(ed);
+		try {
+			synchronized (dc) {
+				ed.openInOwnThread(); 
+			}
+			synchronized (dc) {
+				dc.makeViewAndSitOnIt(ed);
+			}
+			synchronized (dc) {
+				ed.asyncExec(new Runnable() {
+					public void run () {
+						// dc.getView().drawStrings();
+					}
+				});
+			}
+		} finally {};
+
 		// fail("Not yet implemented");
 	}
 
