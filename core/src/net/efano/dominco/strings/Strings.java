@@ -2,7 +2,6 @@ package net.efano.dominco.strings;
 
 import java.util.Iterator;
 import java.util.Vector;
-
 import net.efano.dominco.ui.swt.IStringsViewpageFactory;
 import net.efano.dominco.ui.swt.StringsViewbook;
 import net.efano.dominco.ui.swt.StringsView;
@@ -54,7 +53,7 @@ public class Strings {
 		boolean dfReady = false;
 		while (!dfReady) {
 			dfReady = df.isReady();
-    		System.out.println("sleeping");
+    		System.out.println("waiting for ViewpageFactory is become ready");
 			try {Thread.sleep(100);}
 			catch (InterruptedException e) {}
 		}
