@@ -6,10 +6,11 @@ import java.util.Vector;
 import net.efano.dominco.strings.ui.IStringsViewpage;
 import net.efano.dominco.strings.ui.IStringsViewpageFactory;
 import net.efano.dominco.strings.ui.swt.StringsViewAsTable;
-import net.efano.dominco.strings.ui.swt.StringsViewbookAsTabbedTables;
+// import net.efano.dominco.strings.ui.swt.StringsViewbookAsTabbedTables;
 
 public class Strings {
 
+/*
 	public static void main(String[] args) {
 		Strings strings = new Strings();
 		strings.test();
@@ -41,7 +42,12 @@ public class Strings {
 		} finally {};// catch (InterruptedException e) {e.printStackTrace();}
 
 	}
-
+*/
+	
+	public IStringsViewpage getView() {
+		return view;
+	}
+	
 	private Vector<String> extent;
 	/*
 	 * An optional view
