@@ -7,6 +7,7 @@ import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
+import org.eclipse.swt.graphics.Point;
 
 public class StackedScrolledTables extends Composite {
 	private Table table;
@@ -20,8 +21,12 @@ public class StackedScrolledTables extends Composite {
 	public StackedScrolledTables(Composite parent, int style) {
 		super(parent, style);
 		
-		SashForm sashForm_2 = new SashForm(this, SWT.NONE);
-		sashForm_2.setBounds(111, 31, 180, 234);
+		ScrolledComposite scrolledComposite_7 = new ScrolledComposite(this, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
+		scrolledComposite_7.setExpandHorizontal(true);
+		scrolledComposite_7.setExpandVertical(true);
+		scrolledComposite_7.setBounds(139, 114, 357, 407);
+		
+		SashForm sashForm_2 = new SashForm(scrolledComposite_7, SWT.NONE);
 		
 		SashForm sashForm = new SashForm(sashForm_2, SWT.NONE);
 		sashForm.setOrientation(SWT.VERTICAL);
@@ -99,7 +104,9 @@ public class StackedScrolledTables extends Composite {
 		scrolledComposite_6.setExpandHorizontal(true);
 		scrolledComposite_6.setExpandVertical(true);
 		sashForm_3.setWeights(new int[] {1, 1});
-		sashForm_2.setWeights(new int[] {1, 1, 1});
+		sashForm_2.setWeights(new int[] {129, 197, 163});
+		scrolledComposite_7.setContent(sashForm_2);
+		scrolledComposite_7.setMinSize(sashForm_2.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 
 	}
 
