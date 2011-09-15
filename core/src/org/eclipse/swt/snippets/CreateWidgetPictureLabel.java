@@ -12,6 +12,11 @@ import org.eclipse.swt.events.ControlEvent;
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
 
+/*
+ * From 
+ * http://www.eclipse.org/articles/Article-Writing%20Your%20Own%20Widget/Writing%20Your%20Own%20Widget.htm
+ */
+
 public class CreateWidgetPictureLabel extends Composite {
 
   Label image, text;
