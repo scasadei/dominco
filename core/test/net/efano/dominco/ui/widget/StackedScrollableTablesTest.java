@@ -30,7 +30,7 @@ public class StackedScrollableTablesTest {
 	// private CTabFolder tabFolder;
 	private Display display;
 
-	ScrolledComposite scrolledComposite_7;
+	ScrolledComposite outermostScrollable;
 	
 
 	@BeforeClass
@@ -98,8 +98,8 @@ public class StackedScrollableTablesTest {
 		 shell.addListener (SWT.Resize,  new Listener () {
 			    public void handleEvent (Event e) {
 			      Rectangle rect = shell.getClientArea ();
-			      if (scrolledComposite_7!=null) {
-			    	  scrolledComposite_7.setBounds(0,0,shell.getClientArea().width,shell.getClientArea().height);
+			      if (outermostScrollable!=null) {
+			    	  outermostScrollable.setBounds(0,0,shell.getClientArea().width,shell.getClientArea().height);
 			    }
 			      System.out.println(rect);
 			    }
@@ -115,21 +115,20 @@ public class StackedScrollableTablesTest {
 	 */
 	public void addContents() {
 		
-		scrolledComposite_7 = new ScrolledComposite(shell, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
-		scrolledComposite_7.setExpandHorizontal(true);
-		scrolledComposite_7.setExpandVertical(true);
-		scrolledComposite_7.setBounds(0,0,shell.getSize().x,shell.getSize().y);
+		outermostScrollable = new ScrolledComposite(shell, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
+		outermostScrollable.setExpandHorizontal(true);
+		outermostScrollable.setExpandVertical(true);
+		outermostScrollable.setBounds(0,0,shell.getSize().x,shell.getSize().y);
 		
-		SashForm sashForm_2 = new SashForm(scrolledComposite_7, SWT.NONE);
+		SashForm outermostSashForm = new SashForm(outermostScrollable, SWT.NONE);
 		
-		SashForm sashForm = new SashForm(sashForm_2, SWT.NONE);
-		sashForm.setOrientation(SWT.VERTICAL);
 		
-		ScrolledComposite scrolledComposite = new ScrolledComposite(sashForm, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
-		scrolledComposite.setExpandHorizontal(true);
-		scrolledComposite.setExpandVertical(true);
+		StackedScrollableTables sst = new StackedScrollableTables(outermostSashForm,0);
 		
-		ScrolledComposite scrolledComposite_2 = new ScrolledComposite(scrolledComposite, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
+		SashForm sashForm_2 = new SashForm(outermostSashForm, SWT.NONE);
+		sashForm_2.setOrientation(SWT.VERTICAL);
+
+		ScrolledComposite scrolledComposite_2 = new ScrolledComposite(sashForm_2, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
 		scrolledComposite_2.setExpandHorizontal(true);
 		scrolledComposite_2.setExpandVertical(true);
 		
@@ -148,10 +147,10 @@ public class StackedScrollableTablesTest {
 		tableItem_1.setText("15.09.2011");
 		scrolledComposite_2.setContent(table_1);
 		scrolledComposite_2.setMinSize(table_1.computeSize(SWT.DEFAULT, SWT.DEFAULT));
-		scrolledComposite.setContent(scrolledComposite_2);
-		scrolledComposite.setMinSize(scrolledComposite_2.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+		//scrolledComposite.setContent(scrolledComposite_2);
+		//scrolledComposite.setMinSize(scrolledComposite_2.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 		
-		ScrolledComposite scrolledComposite_1 = new ScrolledComposite(sashForm, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
+		ScrolledComposite scrolledComposite_1 = new ScrolledComposite(sashForm_2, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
 		scrolledComposite_1.setExpandHorizontal(true);
 		scrolledComposite_1.setExpandVertical(true);
 		
@@ -173,34 +172,24 @@ public class StackedScrollableTablesTest {
 		tableItem_4.setText("Giorgio");
 		scrolledComposite_1.setContent(table);
 		scrolledComposite_1.setMinSize(table.computeSize(SWT.DEFAULT, SWT.DEFAULT));
-		sashForm.setWeights(new int[] {1, 1});
+		// sashForm.setWeights(new int[] {1, 1, 1});
+		// sashForm.setWeights(new int[] {1, 1});
 		
-		SashForm sashForm_1 = new SashForm(sashForm_2, SWT.NONE);
-		sashForm_1.setOrientation(SWT.VERTICAL);
+		SashForm sashForm_3 = new SashForm(outermostSashForm, SWT.NONE);
+		sashForm_3.setOrientation(SWT.VERTICAL);
 		
-		ScrolledComposite scrolledComposite_3 = new ScrolledComposite(sashForm_1, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
+		ScrolledComposite scrolledComposite_3 = new ScrolledComposite(sashForm_3, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
 		scrolledComposite_3.setExpandHorizontal(true);
 		scrolledComposite_3.setExpandVertical(true);
 		
-		ScrolledComposite scrolledComposite_4 = new ScrolledComposite(sashForm_1, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
+		ScrolledComposite scrolledComposite_4 = new ScrolledComposite(sashForm_3, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
 		scrolledComposite_4.setExpandHorizontal(true);
 		scrolledComposite_4.setExpandVertical(true);
-		sashForm_1.setWeights(new int[] {1, 1});
-		
-		SashForm sashForm_3 = new SashForm(sashForm_2, SWT.NONE);
-		sashForm_3.setOrientation(SWT.VERTICAL);
-		
-		ScrolledComposite scrolledComposite_5 = new ScrolledComposite(sashForm_3, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
-		scrolledComposite_5.setExpandHorizontal(true);
-		scrolledComposite_5.setExpandVertical(true);
-		
-		ScrolledComposite scrolledComposite_6 = new ScrolledComposite(sashForm_3, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
-		scrolledComposite_6.setExpandHorizontal(true);
-		scrolledComposite_6.setExpandVertical(true);
 		sashForm_3.setWeights(new int[] {1, 1});
-		sashForm_2.setWeights(new int[] {129, 197, 163});
-		scrolledComposite_7.setContent(sashForm_2);
-		scrolledComposite_7.setMinSize(sashForm_2.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+		
+		outermostSashForm.setWeights(new int[] {129, 197, 163});
+		outermostScrollable.setContent(outermostSashForm);
+		outermostScrollable.setMinSize(outermostSashForm.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 
 	}
 	
