@@ -46,6 +46,10 @@ public class ViewbookAsTabbedTables implements IViewpageFactory {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		testThisClass();
+	}
+	
+	public static void testThisClass() {
 		try {
 			ViewbookAsTabbedTables window = new ViewbookAsTabbedTables();
 			window.open();
