@@ -124,6 +124,7 @@ public class StackedScrollableTablesTest {
 		
 		
 		StackedScrollableTables sst = new StackedScrollableTables(outermostSashForm,0);
+		sst.layout();
 		
 		SashForm sashForm_2 = new SashForm(outermostSashForm, SWT.NONE);
 		sashForm_2.setOrientation(SWT.VERTICAL);

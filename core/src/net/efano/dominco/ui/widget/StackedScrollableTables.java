@@ -4,6 +4,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Table;
@@ -27,25 +28,21 @@ public class StackedScrollableTables extends Composite {
 	Label image, text;
 	Color white;
 
+	SashForm sashForm; 
+	ScrolledComposite topScroll;
+	ScrolledComposite bottomScroll;
 	Table bottomTable;
 	Table topTable;
-
+	
 	public void addContent() {
 		
-	}
-	
-	StackedScrollableTables(Composite parent, int style) {
-		super(parent, style);
-
-
-		SashForm sashForm = new SashForm(this, SWT.NONE);
+		sashForm = new SashForm(this, SWT.NONE);
 		sashForm.setOrientation(SWT.VERTICAL);
-
 
 		/*
 		 * Top component
 		 */
-		ScrolledComposite topScroll = new ScrolledComposite(sashForm, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
+		topScroll = new ScrolledComposite(sashForm, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
 		topScroll.setExpandHorizontal(true);
 		topScroll.setExpandVertical(true);
 
@@ -69,7 +66,7 @@ public class StackedScrollableTables extends Composite {
 		/*
 		 * Bottom component
 		 */
-		ScrolledComposite bottomScroll = new ScrolledComposite(sashForm, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
+		bottomScroll = new ScrolledComposite(sashForm, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
 		bottomScroll.setExpandHorizontal(true);
 		bottomScroll.setExpandVertical(true);
 
@@ -94,9 +91,10 @@ public class StackedScrollableTables extends Composite {
 
 
 		sashForm.setWeights(new int[] {1, 1});
-
-
 		
+	}
+	
+	public void addExtraContent() {
 		white = new Color(null, 255, 255, 255);
 		image = new Label(this, 0);
 		text = new Label(this, 0);
@@ -104,7 +102,9 @@ public class StackedScrollableTables extends Composite {
 		setBackground(white);
 		image.setBackground(white);
 		text.setBackground(white);
+		text.setText("ciccio");
 
+		
 		addDisposeListener(new DisposeListener() {
 			public void widgetDisposed(DisposeEvent e) {
 				StackedScrollableTables.this.widgetDisposed(e);
@@ -116,7 +116,27 @@ public class StackedScrollableTables extends Composite {
 				StackedScrollableTables.this.controlResized(e);
 			}
 		});
+		
 	}
+	
+	StackedScrollableTables(Composite parent, int style) {
+		super(parent, style);
+		
+		text = new Label(this,0);
+		text.setText("blah");
+
+		image = new Label(this, 0);
+
+		addControlListener(new ControlAdapter() {
+			public void controlResized(ControlEvent e) {
+				StackedScrollableTables.this.controlResized(e);
+			}
+		});
+
+		addContent();
+
+	}
+	// end of main construction
 
 
 	public void widgetDisposed(DisposeEvent e) {
@@ -132,6 +152,7 @@ public class StackedScrollableTables extends Composite {
 		Point tExtent = text.computeSize(SWT.DEFAULT, SWT.DEFAULT, false);
 		image.setBounds(1, 1, iExtent.x, iExtent.y);
 		text.setBounds(iExtent.x + 5, 1, tExtent.x, tExtent.y);
+		sashForm.setBounds(new Rectangle(0,0,100,300));
 	}
 
 	public Image getImage() {
@@ -154,6 +175,9 @@ public class StackedScrollableTables extends Composite {
 	}
 
 	public Point computeSize(int wHint, int hHint, boolean changed) {
+		// return new Point(100,200);
+		// return new Point(wHint,hHint);
+		
 		Point iExtent = image.computeSize(SWT.DEFAULT, SWT.DEFAULT, false);
 		Point tExtent = text.computeSize(SWT.DEFAULT, SWT.DEFAULT, false);
 		int width = iExtent.x + 5 + tExtent.x;
@@ -161,6 +185,7 @@ public class StackedScrollableTables extends Composite {
 		if (wHint != SWT.DEFAULT) width = wHint;
 		if (hHint != SWT.DEFAULT) height = hHint;         
 		return new Point(width + 2, height + 2);
+		
 	}
 
 }
