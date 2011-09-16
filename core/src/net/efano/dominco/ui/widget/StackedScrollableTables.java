@@ -152,7 +152,7 @@ public class StackedScrollableTables extends Composite {
 		Point tExtent = text.computeSize(SWT.DEFAULT, SWT.DEFAULT, false);
 		image.setBounds(1, 1, iExtent.x, iExtent.y);
 		text.setBounds(iExtent.x + 5, 1, tExtent.x, tExtent.y);
-		sashForm.setBounds(new Rectangle(0,0,100,300));
+		sashForm.setBounds(0,0,getSize().x,getSize().y);
 	}
 
 	public Image getImage() {
