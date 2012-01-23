@@ -16,9 +16,9 @@ public class StringsTest {
 
 	public static void main(String [] args) {
 		strings = new Strings();
-		strings.add("ciccio");
+		strings.add("ciccio9");
 		org.junit.Assert.assertEquals(strings.numel(), 1);
-		strings.add("pillo");
+		strings.add("pillo10");
 		org.junit.Assert.assertEquals(strings.numel(), 2);
 
 		final StringsViewbookAsTabbedTables ed = new StringsViewbookAsTabbedTables();
@@ -64,16 +64,17 @@ public class StringsTest {
 
 	@Test
 	public void testAdd() {
-		strings.add("ciccio");
+		strings.add("ciccio2");
 		org.junit.Assert.assertEquals(strings.numel(), 1);
-		strings.add("pillo");
+		strings.add("pillo3");
 		org.junit.Assert.assertEquals(strings.numel(), 2);
-		net.efano.dominco.strings.ui.swt.StringsViewbookAsTabbedTables ed = new net.efano.dominco.strings.ui.swt.StringsViewbookAsTabbedTables();
-		ed.init();
-		ed.open();
-		IStringsViewpage sw = ed.getNewViewpage();
-		sw.setStrings(strings);
-		sw.drawStrings();
+		final StringsViewbookAsTabbedTables ed = new StringsViewbookAsTabbedTables();
+		try {
+		synchronized (strings) {ed.openInOwnThread();}
+		synchronized (strings) {strings.makeViewAndSitOnIt2(ed);}
+		strings.getView().drawStrings2();
+		} 
+		finally{};
 	}
 
 }

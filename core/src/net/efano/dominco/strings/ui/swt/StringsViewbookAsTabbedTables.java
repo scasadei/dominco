@@ -139,10 +139,10 @@ public class StringsViewbookAsTabbedTables implements IStringsViewpageFactory {
 	return newPageBuffer;
 	}
 	
-	@Override
+	/* @Override 
 	public IStringsViewpage getNewViewpage() {
 		return new StringsViewAsTable(addView("StringsView","Strings"));
-	}
+	}*/
 
 	@Override
 	public IStringsViewpage getNewViewpage(String viewName,String [] colNames) {
