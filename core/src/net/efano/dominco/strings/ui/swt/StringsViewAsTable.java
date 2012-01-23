@@ -36,6 +36,14 @@ public class StringsViewAsTable implements IStringsViewpage {
 		return strings;
 	}
 
+	public void drawStrings2() {
+	table.getDisplay().asyncExec(new Runnable() {
+		public void run () {
+			strings.getView().drawStrings();
+		}
+	});
+	}
+	
 	@Override
 	public void drawStrings() {
 		strings.draw();

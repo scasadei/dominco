@@ -32,11 +32,12 @@ public class StringsTest {
 			strings.makeViewAndSitOnIt(ed);
 		}
 	    synchronized (strings) {
+	    	strings.getView().drawStrings2();/*
 			ed.getDisplay().asyncExec(new Runnable() {
 				public void run () {
 					strings.getView().drawStrings();
 				}
-			});
+			});*/
 		}
 		} finally {};// catch (InterruptedException e) {e.printStackTrace();}
 	}
