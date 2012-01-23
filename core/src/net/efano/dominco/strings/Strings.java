@@ -22,6 +22,7 @@ public class Strings {
 	// private IDrawable drawable;
 
 	public void makeViewAndSitOnIt2(final IStringsViewpageFactory df)  {
+		/*
 		boolean dfReady = false;
 		while (!dfReady) {
 			dfReady = df.isReady();
@@ -29,6 +30,7 @@ public class Strings {
 			try {Thread.sleep(100);}
 			catch (InterruptedException e) {}
 		}
+		*/
 		view = df.getNewViewpage2();
 		view.setStrings(Strings.this);
 	}

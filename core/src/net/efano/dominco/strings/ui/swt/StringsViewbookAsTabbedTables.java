@@ -130,7 +130,16 @@ public class StringsViewbookAsTabbedTables implements IStringsViewpageFactory {
     private IStringsViewpage newPageBuffer;
     
 	public IStringsViewpage getNewViewpage2() {
-	display.syncExec(
+
+		boolean dfReady = false;
+		while (!dfReady) {
+			dfReady = isReady();
+    		System.out.println("waiting for ViewpageFactory to become ready");
+			try {Thread.sleep(100);}
+			catch (InterruptedException e) {}
+		}
+		
+		display.syncExec(
 			new Runnable() {
 				public void run () {
 					newPageBuffer = new StringsViewAsTable(addView("StringsView","Strings"));
