@@ -29,7 +29,7 @@ public class StringsTest {
 			ed.openInOwnThread(); 
 		}
 		synchronized (strings) {
-			strings.makeViewAndSitOnIt(ed);
+			strings.makeViewAndSitOnIt2(ed);
 		}
 	    synchronized (strings) {
 	    	strings.getView().drawStrings2();/*

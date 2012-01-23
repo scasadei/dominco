@@ -21,6 +21,19 @@ public class Strings {
 	private IStringsViewpage view;
 	// private IDrawable drawable;
 
+	public void makeViewAndSitOnIt2(final IStringsViewpageFactory df)  {
+		boolean dfReady = false;
+		while (!dfReady) {
+			dfReady = df.isReady();
+    		System.out.println("waiting for ViewpageFactory to become ready");
+			try {Thread.sleep(100);}
+			catch (InterruptedException e) {}
+		}
+		view = df.getNewViewpage2();
+		view.setStrings(Strings.this);
+	}
+
+	/*
 	public void makeViewAndSitOnIt(final IStringsViewpageFactory df)  {
 
 		
@@ -40,7 +53,7 @@ public class Strings {
 						view.setStrings(Strings.this);
 					}
 				});
-	}
+	}*/
 
 	public Strings() {
 		extent = new Vector<String>();

@@ -1,6 +1,7 @@
 package net.efano.dominco.strings.ui.swt;
 
 
+import net.efano.dominco.strings.Strings;
 import net.efano.dominco.strings.ui.IStringsViewpage;
 import net.efano.dominco.strings.ui.IStringsViewpageFactory;
 
@@ -125,6 +126,19 @@ public class StringsViewbookAsTabbedTables implements IStringsViewpageFactory {
 		drawString(table_1,"Megolo");
 	}
 
+
+    private IStringsViewpage newPageBuffer;
+    
+	public IStringsViewpage getNewViewpage2() {
+	display.syncExec(
+			new Runnable() {
+				public void run () {
+					newPageBuffer = new StringsViewAsTable(addView("StringsView","Strings"));
+				}
+			});
+	return newPageBuffer;
+	}
+	
 	@Override
 	public IStringsViewpage getNewViewpage() {
 		return new StringsViewAsTable(addView("StringsView","Strings"));
@@ -202,9 +216,9 @@ public class StringsViewbookAsTabbedTables implements IStringsViewpageFactory {
 		
 	}
 
-	@Override
+	/*@Override
 	public void syncExec(Runnable aRunnable) {
 		display.syncExec(aRunnable);
-	}	
+	}*/	
 	
 }
