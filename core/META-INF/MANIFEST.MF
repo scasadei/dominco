@@ -16,3 +16,4 @@ Export-Package: net.efano.dominco,
  net.efano.dominco1.core,
  net.efano.dominco1.core.session,
  org.eclipse.swt.snippets
+Require-Bundle: org.eclipse.swt;bundle-version="3.7.0"
